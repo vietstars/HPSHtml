@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HPS Project</title>
+	<link rel="stylesheet" href="css/bootstrap.css?ver=0.0.1">
+	<link rel="stylesheet" href="css/admin.css?ver=0.0.1">
+	<link rel="stylesheet" href="css/jquery.dataTables.css?ver=0.0.1">
+	<link rel="stylesheet" href="css/dataTables.bootstrap4.css?ver=0.0.1">
+	<script type="text/javascript" src="js/jquery-3.2.1.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/popper.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/bootstrap.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/dataTables.bootstrap4.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/chartacc.js?ver=0.0.1"></script>
+</head>
+<body>
+	<section class='header admin-ctl'>
+		<nav class="navbar fixed-top navbar-expand-lg">
+		  	<a class="navbar-brand" href="#">
+		  		<img src="img/logo.png" alt="">
+		  	</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded=	"false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+		  	</button>
+		  	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+		    	<div class="navbar-nav">
+		      		<a class="nav-item nav-link disabled" href="#"><span class="avatar-group"><img src="img/user2-160x160.jpg" class="img-avatar" alt="user avatar"><span class='icon-drop text-center'><i class="fa fa-angle-down"></i></span></span>Hello, <span class='user-name'>Michael</span></a>
+		      		<a class="nav-item nav-link" href="#">Logout <i class="fa fa-ilogout"></i></a>
+		    	</div>
+		  	</div>
+		</nav>
+		<div class="admin-menu">
+		  	<div class="row">
+		  		<div class="col-1 left-padding"></div>
+	   			<div class="col-11 right-menu">
+	   				<a href="admin.html" class="tab-title">Company Details</a>
+	   				<a href="debtor.html" class="tab-title">Debtor & Creditor</a>
+	   				<a href="monitoring.html" class="tab-title">Ref. Monitoring</a>
+	   				<a href="accgroup.html" class="tab-title">Acc. Group Mgmt</a>
+	   				<a href="stafffile.html" class="tab-title">Staff Files</a>
+	   				<a href="chartacc.html" class="tab-title active">Chart Of Acc.</a>
+	   				<a href="stafflogin.html" class="tab-title">Staff Login</a>
+	   			</div>
+			</div>
+		</div>
+	</section>
+	<section class='body row'>
+	    <div class="col-1 left-menu admin-menu">
+       		<ul class="menu">
+       			<li><a href="index.html"><i class="fa fa-idashboard fa-2x"></i>Dashboard</a></li>
+       			<li class='sub-menu active'>
+       				<a class='sub-menu'><i class="fa fa-iacc fa-2x"></i>iAccount</a>
+       				<ul class="sub-menu">
+       					<li><a href="setting.html">Setting</a></li>
+       					<li><a href="admin.html" class='active'>Admin</a></li>
+       					<li><a href="entries.html">Entries</a></li>
+       					<li><a href="banking.html">Banking</a></li>
+       					<li><a href="report.html">Report</a></li>
+       				</ul>
+       			</li>
+       			<li><a href="motor.html"><i class="fa fa-imotor fa-2x"></i>iMotor</a></li>
+       		</ul>
+	    </div>
+	    <div class="col-11 right-content">
+	    	<div class="container-fluid chartacc-content">
+	    		<ol class="breadcrumb">
+				  	<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+				  	<li class="breadcrumb-item"><a href="#">Admin</a></li>
+				  	<li class="breadcrumb-item active">Chart Of Account</li>
+				</ol>
+	    		<h3 class="page-title">Chart Of Account<small></small></h3>
+		    	<div class="card search-form">
+				  	<div class="card-body">
+					    <h4 class="card-title">Search</h4>
+					    <div class="row">
+					    	<div class="col-12">
+					    		<div class="form-group">
+						    		<select class="form-control choose-type" id="type" onchange="this.className='form-control choose-type selected'">
+								      	<option hidden>Choose Acc. Group</option>
+								      	<option>2</option>
+								      	<option>3</option>
+								      	<option>4</option>
+								      	<option>5</option>
+								    </select>
+							    </div>
+					    	</div>					    	
+					    </div>
+				    	<button type="button" class="btn btn-search">Search</button>
+				  	</div>
+				</div>
+		    	<button type="button" class="btn btn-acc-code" data-toggle="modal" data-target="#newAccount"><fa class="fa fa-plus"></fa>add new ACCOUNT CODE</button>
+		    	<div class="card chartacc-form">
+				  	<div class="card-body with-border card-top">
+			  			<h3 class='card-title'>ASSETS</h3>
+			  			<button class='btn pull-right btn-editor'><i class="fa fa-save"></i></button>			  			
+				  	</div>
+				  	<div class="card-body">
+				  		<table id="chartacc-list" class="table table-hover table-bordered">
+				  			<thead>
+							    <tr>
+							      <th width="10%">Ledger</th>
+							      <th width="35%">Description</th>
+							      <th width="10%">GST</th>
+							      <th width="10%">Invoice</th>
+							      <th width="10%">V.Invoice</th>
+							      <th width="10%">Receipt</th>
+							      <th width="15%">Payment</th>
+							    </tr>
+						  	</thead>
+				  		</table>
+				  	</div>
+				</div>
+	    	</div>
+	    </div>
+	    <div class="modal fade" id="newAccount" tabindex="-1" role="dialog" aria-labelledby="newAccLabel" aria-hidden="true">
+		  	<div class="modal-dialog modal-lg" role="document">
+			    <div class="modal-content">
+			      	<div class="modal-header">
+				        <h2 class="modal-title" id="newAccLabel">Add Account Code</h2>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				        </button>
+			      	</div>
+			      	<div class="modal-body">
+				        <div class="row justify-content-md-center">
+				        	<div class="col-2">
+					    		Ac/Group
+					    	</div>
+				        	<div class="col-6">
+					    		<div class="form-group">
+						    		<select class="form-control choose-type" id="type" onchange="this.className='form-control choose-type selected'">
+								      	<option hidden>Choose Ac/Group</option>
+								      	<option>2</option>
+								      	<option>3</option>
+								      	<option>4</option>
+								      	<option>5</option>
+								    </select>
+							    </div>
+					    	</div>
+				        </div>
+				        <div class="row justify-content-md-center">
+				        	<div class="col-2">
+					    		Ledger
+					    	</div>
+				        	<div class="col-6">
+					    		<div class="form-group">
+								    <input type="search" class="form-control search-title" id="Ledger" placeholder="Input Ledger">
+							  	</div>
+					    	</div>
+				        </div>
+				        <div class="row justify-content-md-center">
+				        	<div class="col-2">
+					    		Description
+					    	</div>
+				        	<div class="col-6">
+					    		<div class="form-group">
+								    <input type="search" class="form-control search-title" id="description" placeholder="Input Description">
+							  	</div>
+					    	</div>
+				        </div>
+				        <div class="row justify-content-md-center">
+				        	<div class="col-2">
+					    		GST Type
+					    	</div>
+				        	<div class="col-6">
+					    		<div class="form-group">
+						    		<select class="form-control choose-type gst-type" id="type" onchange="this.className='form-control choose-type gst-type selected'">
+								      	<option hidden>Choose Type</option>
+								      	<option>NA - Not Applicable</option>
+								      	<option>SR - Standard Rated</option>
+								      	<option>EX - EXempted</option>
+								      	<option>ZR - Zero Rated</option>
+								      	<option>BG - Blocked GST</option>
+								    </select>
+							    </div>
+					    	</div>
+				        </div>
+			      	</div>
+			      	<div class="modal-footer">
+			      		<div class='checkbox add-other'><input type='checkbox'><label></label></div>
+			      		Add another
+				        <button type="button" class="btn btn-add-new">Add</button>
+				        <button type="button" class="btn btn-cancel" data-dismiss="modal">Cancel</button>
+			      	</div>
+			    </div>
+		  	</div>
+		</div>
+	</section>
+	<section class='footer'>
+	</section>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HPS Project</title>
+	<link rel="stylesheet" href="css/bootstrap.css?ver=0.0.1">
+	<link rel="stylesheet" href="css/admin.css?ver=0.0.1">
+	<script type="text/javascript" src="js/jquery-3.2.1.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/popper.js?ver=0.0.1"></script>
+	<script type="text/javascript" src="js/bootstrap.js?ver=0.0.1"></script>
+</head>
+<body>
+	<section class='header admin-ctl'>
+		<nav class="navbar fixed-top navbar-expand-lg">
+		  	<a class="navbar-brand" href="#">
+		  		<img src="img/logo.png" alt="">
+		  	</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded=	"false" aria-label="Toggle navigation">
+		    	<span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+		  	</button>
+		  	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+		    	<div class="navbar-nav">
+		      		<a class="nav-item nav-link disabled" href="#"><span class="avatar-group"><img src="img/user2-160x160.jpg" class="img-avatar" alt="user vâtr"><span class='icon-drop text-center'><i class="fa fa-angle-down"></i></span></span>Hello, <span class='user-name'>Michael</span></a>
+		      		<a class="nav-item nav-link" href="#">Logout <i class="fa fa-ilogout"></i></a>
+		    	</div>
+		  	</div>
+		</nav>
+		<div class="admin-menu">
+		  	<div class="row">
+		  		<div class="col-1 left-padding"></div>
+	   			<div class="col-11 right-menu">
+	   				<a href="admin.html" class="tab-title active">Company Details</a>
+	   				<a href="debtor.html" class="tab-title">Debtor & Creditor</a>
+	   				<a href="monitoring.html" class="tab-title">Ref. Monitoring</a>
+	   				<a href="accgroup.html" class="tab-title">Acc. Group Mgmt</a>
+	   				<a href="stafffile.html" class="tab-title">Staff Files</a>
+	   				<a href="chartacc.html" class="tab-title">Chart Of Acc.</a>
+	   				<a href="stafflogin.html" class="tab-title">Staff Login</a>
+	   			</div>
+			</div>
+		</div>
+	</section>
+	<section class='body row'>
+	    <div class="col-1 left-menu admin-menu">
+       		<ul class="menu">
+       			<li><a href="index.html"><i class="fa fa-idashboard fa-2x"></i>Dashboard</a></li>
+       			<li class='sub-menu active'>
+       				<a class='sub-menu'><i class="fa fa-iacc fa-2x"></i>iAccount</a>
+       				<ul class="sub-menu">
+       					<li><a href="setting.html">Setting</a></li>
+       					<li><a href="admin.html" class='active'>Admin</a></li>
+       					<li><a href="entries.html">Entries</a></li>
+       					<li><a href="banking.html">Banking</a></li>
+       					<li><a href="report.html">Report</a></li>
+       				</ul>
+       			</li>
+       			<li><a href="motor.html"><i class="fa fa-imotor fa-2x"></i>iMotor</a></li>
+       		</ul>
+	    </div>
+	    <div class="col-11 right-content">
+	    	<div class="container-fluid admin-content">
+	    		<ol class="breadcrumb">
+				  	<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+				  	<li class="breadcrumb-item"><a href="#">Admin</a></li>
+				  	<li class="breadcrumb-item active">Company Details</li>
+				</ol>
+	    		<h3 class="page-title">Company Details<small></small></h3>
+		    	<div class="card admin-form">
+				  	<div class="card-body with-border">
+			  			<h3 class='card-title'>Company Profile</h3>
+			  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+				  	</div>
+				  	<div class="card-body card-content with-border">
+			  			<div class="container-fluid">
+				  			<div class="row">
+							    <div class="col-2">
+							    	<div class="company-logo">
+								      	<img src="img/YH-logo.jpg" alt="Company logo">
+								      	<button class="btn btn-add-logo"> Add logo</button>
+							    	</div>							    	
+							    </div>
+							    <div class="col-4">
+									<div class="form-group">
+									    <label for="Company-name">Company Name</label>
+									    <input type="text" class="form-control company-name" id="Company-name" placeholder="Input Company Name" value="YEW HENG CREDIT ENTERPRISE PTE LTD">
+								  	</div>
+									<div class="form-group">
+									    <label for="GST-regn">GST Regn.</label>
+									    <input type="text" class="form-control" id="GST-regn" placeholder="Input GST Regn." value="1">
+								  	</div>
+									<div class="form-group">
+									    <label for="UEN-no">UEN No</label>									    
+									    <input type="text" class="form-control" id="UEN-no" placeholder="Input UEN No" value="">
+								  	</div>
+							    </div>
+							    <div class="col-3">							    	
+									<div class="form-group">
+									    <label for="Tel">Tel</label>
+									    <input type="text" class="form-control" id="Tel" placeholder="Input Phone Number" value="67499535">
+								  	</div>							    	
+									<div class="form-group">
+									    <label for="Fax">Fax</label>
+									    <input type="text" class="form-control" id="Fax" placeholder="Input Fax Number" value="63447917">
+								  	</div>
+							    </div>
+							    <div class="col-3">						    	
+									<div class="form-group">
+									    <label for="Tel-2">Tel 2</label>
+									    <input type="text" class="form-control" id="Tel-2" placeholder="Input Phone Number" value="67499535">
+								  	</div>							    	
+									<div class="form-group">
+									    <label for="url">URL</label>
+									    <input type="text" class="form-control" id="url" placeholder="Http://www..." value="">
+								  	</div>
+							    </div>
+				  			</div>				  			
+				  		</div>
+				  	</div>
+				  	<div class="card-body with-border">
+			  			<h3 class='card-title'>Upload Images</h3>			  			
+				  	</div>
+				  	<div class="card-body card-content Image-uploaded">
+						<div class="container-fluid">
+				  			<div class="row">
+							    <div class="col-2">
+							    	<div class="img-uploaded">
+							    		<h5 class="img-title">Login Header</h5>
+								      	<div style="background:url(img/office.jpg)" class='img-view'></div>
+							    	</div>							    	
+							    </div>
+							    <div class="col-2">
+							    	<div class="img-uploaded">
+							    		<h5 class="img-title">Application Header</h5>
+								      	<div class='img-view'></div>
+							    	</div>							    	
+							    </div>
+				  			</div>				  			
+				  		</div>
+				  	</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<div class="card department-form">
+						  	<div class="card-body with-border">
+					  			<h3 class='card-title'>Department</h3>
+					  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+						  	</div>	
+						  	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-8 department-name">JACKCARS</div>
+										<div class="col-4 department-phone"><i class="fa fa-iphone"></i> None</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-8 department-name">YEW HENG</div>
+										<div class="col-4 department-phone"><i class="fa fa-iphone"></i> None</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-8 department-name">S.1 MOTORING</div>
+										<div class="col-4 department-phone"><i class="fa fa-iphone"></i>67499535</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-8 department-name">M.1 MOTORING</div>
+										<div class="col-4 department-phone"><i class="fa fa-iphone"></i>67437030</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-8 department-name">ALBERT MOTOR</div>
+										<div class="col-4 department-phone"><i class="fa fa-iphone"></i>62737188</div>
+									</a>
+							    </li>
+						  	</ul>	
+						  	<div class="card-footer">
+					  					  			
+						  	</div>					  	
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card address-form">
+						  	<div class="card-body with-border">
+					  			<h3 class='card-title'>Address</h3>
+					  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+						  	</div>	
+						  	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Blk/Tower</div>
+										<div class="col-8 address-content">#</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Street Name</div>
+										<div class="col-8 address-content">62 CHANGI ROAD </div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Floor-Unit No</div>
+										<div class="col-8 address-content">01-02</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Building Name</div>
+										<div class="col-8 address-content">#</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Postal Code</div>
+										<div class="col-8 address-content">419713</div>
+									</a>
+							    </li>
+						  	</ul>	
+						  	<div class="card-footer">
+					  					  			
+						  	</div>					  	
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card address-form">
+						  	<div class="card-body with-border">
+					  			<h3 class='card-title'>Billing Address</h3>
+					  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+						  	</div>	
+						  	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Blk/Tower</div>
+										<div class="col-8 address-content">#</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Street Name</div>
+										<div class="col-8 address-content">62 CHANGI ROAD </div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Floor-Unit No</div>
+										<div class="col-8 address-content">01-02</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Building Name</div>
+										<div class="col-8 address-content">#</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 address-key">Postal Code</div>
+										<div class="col-8 address-content">419713</div>
+									</a>
+							    </li>
+						  	</ul>	
+						  	<div class="card-footer">
+					  			<div class="form-check">
+								    <label class="form-check-label">
+								      <input type="checkbox" class="form-check-input">
+								      Same as Address	
+								    </label>
+								  </div>  			
+						  	</div>	
+					  	</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<div class="card account-form">
+						  	<div class="card-body with-border">
+					  			<h3 class='card-title'>Account</h3>
+					  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+						  	</div>	
+						  	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 account-key">Start Date</div>
+										<div class="col-8 account-content">31/12/2010</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 account-key">Fiscal Start Date</div>
+										<div class="col-8 account-content">31/12/2010</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 account-key">Fiscal End Date</div>
+										<div class="col-8 account-content">31/12/2010</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 account-key">Price Decimal</div>
+										<div class="col-8 account-content">2</div>
+									</a>
+							    </li>
+						  	</ul>	
+						  	<div class="card-footer">
+					  					  			
+						  	</div>					  	
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card payroll-form">
+						  	<div class="card-body with-border">
+					  			<h3 class='card-title'>Payroll Setting</h3>
+					  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+						  	</div>	
+						  	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 payroll-key">Payroll Start Date</div>
+										<div class="col-8 payroll-content">01/01/2016</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 payroll-key">CPF Ceiling</div>
+										<div class="col-8 payroll-content">6000</div>
+									</a>
+							    </li>
+						  	</ul>	
+						  	<div class="card-footer">	
+						  	</div>					  	
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card ipaddress-form">
+						  	<div class="card-body with-border">
+					  			<h3 class='card-title'>IP Rules</h3>
+					  			<button class='btn pull-right btn-editor'><i class="fa fa-pencil"></i></button>			  			
+						  	</div>	
+						  	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 ipaddress-key">IP Address</div>
+										<div class="col-8 ipaddress-content">FALSE</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 ipaddress-key">IP Editor</div>
+										<div class="col-8 ipaddress-content ip-editor">Michael lang</div>
+									</a>
+							    </li>
+							    <li class="list-group-item">
+									<a href="#" class='row'>
+										<div class="col-4 ipaddress-key">IP Edited</div>
+										<div class="col-8 ipaddress-content">07/07/2017</div>
+									</a>
+							    </li>
+						  	</ul>	
+						  	<div class="card-footer"> 			
+						  	</div>	
+					  	</div>
+					</div>
+				</div>
+	    	</div>
+	    </div>
+	</section>
+	<section class='footer'>
+	</section>
+</body>
+</html>

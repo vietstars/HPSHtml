@@ -1,0 +1,309 @@
+@include roboto-font('roboto', 'Roboto', 'Black', 900, normal);
+@include roboto-font('roboto', 'Roboto', 'BlackItalic', 900, italic);
+@include roboto-font('roboto', 'Roboto', 'Bold', 700, normal);
+@include roboto-font('roboto', 'Roboto', 'BoldItalic', 700, italic);
+@include roboto-font('roboto', 'Roboto', 'Light', 300, normal);
+@include roboto-font('roboto', 'Roboto', 'LightItalic', 300, italic);
+@include roboto-font('roboto', 'Roboto', 'Medium', 500, normal);
+@include roboto-font('roboto', 'Roboto', 'MediumItalic', 500, italic);
+@include roboto-font('roboto', 'Roboto', 'Regular', 400, normal);
+@include roboto-font('roboto', 'Roboto', 'RegularItalic', 400, italic);
+@include roboto-font('roboto', 'Roboto', 'Thin', 100, normal);
+@include roboto-font('roboto', 'Roboto', 'ThinItalic', 100, italic);
+
+$background-color: #f8f8f8!default;
+$font-default: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
+
+$primary-1:#392c70!default;
+$primary-2:#922c88!default;
+
+$secondary-1:#10e39f!default;
+$secondary-2:#1bc9ec!default;
+
+$dark:#303030!default;
+$dark-2:#f5f5f5!default;
+
+
+$text-color: #8c8c8c!default;
+$a-default: $text-color;
+$a-changed: $primary-2;
+
+$border-color: #f1f1f1!default;
+
+
+html,body{	
+	::-moz-selection { background-color: #E13300; color: white; }
+  ::selection { background-color: #E13300; color: white; }
+  background-color: $background-color;
+  font-family: $font-default;
+  color: $text-color;
+  overflow-x: hidden;
+}
+a{
+  color: $a-default;
+  @include transition(.5s);
+  &:hover{
+    color: $a-changed;
+    @include transition(.5s);
+    text-decoration: none;
+  }
+}
+.form-group{
+  input,select,.btn{
+    border-radius: 0;
+  }
+}
+.btn{
+  border-radius: 0;
+}
+
+.table{
+  border-bottom:0!important;
+  &.dataTable{
+    margin-bottom: 30px!important;
+  }
+  thead{
+    tr{
+      th{
+        height: 71px;
+        vertical-align: middle;
+        font-family:"Roboto-Light", sans-serif, Helvetica, Arial, sans-serif;
+        color: $dark;
+        font-size: 18px;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        height: 74px;
+        vertical-align: middle;
+      }
+    }
+  }
+  &.table-hover{
+    tbody{
+      tr{
+        background-color: rgba(0, 0, 0, 0.015)!important;
+        a{
+          color:$primary-2!important;
+        }
+        &:hover{
+          background-color: rgba(0, 0, 0, 0.075)!important;
+        }
+      }
+    }
+  }
+  &.table-bordered {
+    border: 1px solid white;
+    td,th{
+      border: 1px solid white;
+    }
+  }
+} 
+.breadcrumb{
+  background-color: transparent;
+  padding-left: 0;
+}  
+.with-border{
+  @include border(1px,$border-color,b);
+}
+
+label.slider{
+  font-family:"Roboto-Light", sans-serif, Helvetica, Arial, sans-serif; 
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color:$dark;
+  ~.ui-slider.ui-slider-horizontal{
+    height: 6px;
+    margin-bottom: 20px;
+    border-color: transparent;
+    background-color: $border-color;
+    .ui-slider-range{
+      background-color: $primary-1;
+      @include shadow(1px 2px 5px -1px rgba(0, 0, 0, 0.3));
+    }
+    .ui-slider-handle.ui-state-default{
+      cursor: pointer;
+      top: -170%;
+      outline:none;
+      @include bgrad(lighten($primary-2,30%),$primary-2);
+      @include radius(50%,a);
+      @include border(1px,lighten($primary-2,30%),a);
+      @include shadow(1px 2px 5px -1px rgba(0, 0, 0, 0.3));
+    }
+  }
+}
+/***********************************/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  text-align: left;
+  b{
+    font-family:"Roboto-Light", sans-serif, Helvetica, Arial, sans-serif; 
+    text-transform: capitalize;
+  }
+  input {
+    display:none;
+    &:checked + .slider {
+      background-color: $primary-1;
+    }
+    &:focus + .slider {
+      box-shadow: 0 0 1px $primary-1;
+    }
+    &:checked + .slider:before {
+      -webkit-transform: translateX(calc(5rem - 34px));
+      -ms-transform: translateX(calc(5rem - 34px));
+      transform: translateX(calc(5rem - 34px));
+    }
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    width: 5rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    @include shadow(0 3px 5px -1px rgba(0, 0, 0, 0.3));
+    &:before {
+      position: absolute;
+      content: "";
+      height: 32px;
+      width: 32px;
+      left: 1px;
+      bottom: 1px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    &.round {
+      border-radius: 34px;
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
+  &.info{
+    input {
+      &:checked + .slider {
+        background-color: $secondary-1;
+      }
+      &:focus + .slider {
+        box-shadow: 0 0 1px $secondary-1;
+      }
+    }
+  }
+  &.primary{
+    input {
+      &:checked + .slider {
+        background-color: $primary-2;
+      }
+      &:focus + .slider {
+        box-shadow: 0 0 1px $primary-2;
+      }
+    }
+  }
+  &.danger{
+    input {
+      &:checked + .slider {
+        background-color: red;
+      }
+      &:focus + .slider {
+        box-shadow: 0 0 1px red;
+      }
+    }
+  }
+  &.warning{
+    input {
+      &:checked + .slider {
+        background-color: orange;
+      }
+      &:focus + .slider {
+        box-shadow: 0 0 1px orange;
+      }
+    }
+  }
+}
+/**************************************/
+.checkbox{
+  position: relative;
+  display: inline-block;
+  line-height: 20px;
+  height: 20px;
+  input {
+    @include opacity(0);
+    position: absolute!important;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    margin: 0;
+  }
+  label {
+    height: 20px;
+    min-height: 20px;
+    width: 20px;
+    border: 1px solid #CCC;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0;
+    z-index: 5;
+    border-color:$primary-1;
+  }
+  [type=checkbox]:checked ~ label:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    text-rendering: auto;
+    position: absolute;
+    font-size: inherit;
+    content: '\f00c';
+    left: 50%;
+    top: 50%;
+    transform:translate3d(-50%,-50%,0);
+    font-size: 18px;
+    background-color:$primary-1;
+    color: white;
+  }
+  &.checkbox-primary{
+    label {      
+      border-color:$primary-2;
+    }
+    [type=checkbox]:checked ~ label:before {
+      background-color:$primary-2;
+    }
+  }
+  &.checkbox-info{
+    label {
+      border-color:$secondary-1;
+    }
+    [type=checkbox]:checked ~ label:before {
+      background-color:$secondary-1;
+    }
+  }
+  &.checkbox-pending{
+    label {
+      border-color: orange;
+    }
+    [type=checkbox]:checked ~ label:before {
+      background-color: orange;
+    }
+  }
+  &.checkbox-warning{
+    label {
+      border-color: red;
+    }
+    [type=checkbox]:checked ~ label:before {
+      background-color: red;
+    }
+  }
+}
+/*********************************/
